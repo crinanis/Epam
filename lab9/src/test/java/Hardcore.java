@@ -5,12 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Hardcore {
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\budan\\Desktop\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "d:\\1POIT\\3\\TPO\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         driver.get("https://yopmail.com/en");
         driver.findElement(By.xpath("//a[@href='email-generator']")).click();
@@ -83,7 +85,7 @@ public class Hardcore {
 
         driver.findElement(By.xpath("//md-select[@placeholder='Local SSD']")).click();
         driver.findElement(By.xpath("//md-option[@id='select_option_450']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(2000);
 
         driver.findElement(By.xpath("//md-select[@placeholder='Datacenter location']")).click();
         driver.findElement(By.xpath("//md-option[@id='select_option_229']")).click();
@@ -94,9 +96,9 @@ public class Hardcore {
         Thread.sleep(1500);
 
         driver.findElement(By.xpath("//button[@aria-label='Add to Estimate']")).click();
-        Thread.sleep(1500);
+        Thread.sleep(5000);
 
-        driver.findElement(By.xpath("//button[@aria-label='Email']")).click();
+        driver.findElement(By.xpath("/html/body/md-content/md-card/div/md-card-content[2]/md-card/md-card-content/div/div/div/div[3]/button[2]")).click();
         Thread.sleep(1500);
 
         driver.findElement(By.xpath("//input[@type='email']"))

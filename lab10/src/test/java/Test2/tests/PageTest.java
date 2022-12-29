@@ -76,16 +76,20 @@ public class PageTest extends BaseTest{
     }
 
     @Test
-    public void checkCommitmentTerm(){
+    public void checkCommitmentTerm() throws InterruptedException {
         calculatorPage.openCloudPage();
         calculatorPage.goToGoogleCloudPlatformPricingCalculatorPage(
                 "Google Cloud Platform Pricing Calculator");
         calculatorPage.sendKeyInToNumberOfInstancesField("4");
         calculatorPage.selectSeriesOfMachine();
+        Thread.sleep(2000);
         calculatorPage.selectMachineType();
         calculatorPage.clickAddGpusCheckBox();
+        Thread.sleep(2000);
         calculatorPage.selectNumberOfGpus();
+        Thread.sleep(2000);
         calculatorPage.selectGpuType();
+        Thread.sleep(2000);
         calculatorPage.selectLocalSsd();
         calculatorPage.selectDataCenterLocation();
         calculatorPage.selectCommittedUsage();

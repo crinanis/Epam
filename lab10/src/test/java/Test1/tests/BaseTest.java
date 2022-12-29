@@ -14,6 +14,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setDriver(){
+        System.setProperty("webdriver.chrome.driver", "d:\\1POIT\\3\\TPO\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -21,7 +22,8 @@ public class BaseTest {
     }
 
     @AfterMethod (alwaysRun = true)
-    public void closeDriver(){
+    public void closeDriver() throws InterruptedException {
+        Thread.sleep(5000);
         driver.quit();
     }
 
